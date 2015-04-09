@@ -1,51 +1,52 @@
+import java.util.ArrayList;
+
 /**
  * Created by Ramin on 25.03.2015.
  */
 public class Car
 {
-    private double speed = 0;
-    private double acceleration = 0;
 
-    private float xPosition = 0;
-    private float yPosition = 0;
+    private Roundabout roundabout = null;
 
     private int carWidth = 0;
     private int carHeight = 0;
 
-    public Car(float xPosition, float yPosition)
+    private int xPos = 0;
+    private int yPos = 0;
+
+    public Car(int xPos, int yPos, int carWidth, int carHeight)
     {
-        this.xPosition = xPosition;
-        this.yPosition = yPosition;
+        this.xPos = xPos;
+        this.yPos = yPos;
+
+        this.carWidth = carWidth;
+        this.carHeight = carHeight;
     }
 
-    public void accelerate()
+    public void moveCar(int xPos, int yPos )
     {
-        acceleration++;
+        this.xPos += xPos;
+        this.yPos += yPos;
     }
 
-    public void decelerate()
+    public int getxPos()
     {
-        acceleration--;
+        return xPos;
     }
 
-    public float getxPosition()
+    public void setxPos(int xPos)
     {
-        return xPosition;
+        this.xPos = xPos;
     }
 
-    public void setxPosition(float xPosition)
+    public int getyPos()
     {
-        this.xPosition = xPosition;
+        return yPos;
     }
 
-    public float getyPosition()
+    public void setyPos(int yPos)
     {
-        return yPosition;
-    }
-
-    public void setyPosition(float yPosition)
-    {
-        this.yPosition = yPosition;
+        this.yPos = yPos;
     }
 
     public int getCarWidth()
@@ -67,4 +68,5 @@ public class Car
     {
         this.carHeight = carHeight;
     }
+
 }
